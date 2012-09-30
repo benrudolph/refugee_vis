@@ -1,4 +1,4 @@
-(function(window) {
+function map(year) {
   var data,
       xy = d3
             .geo
@@ -47,7 +47,7 @@
     }
   }
 
-  refugees = refugees.filter(function(d) { return d.Year == 2010 })
+  refugees = refugeesRaw.filter(function(d) { return d.Year == year })
 
   var containers = nodes.selectAll('.node')
     .data(refugees)
@@ -169,4 +169,12 @@
 
 
 
-})(this);
+}
+$(document).ready(function() {
+  map(2006)
+
+  $("input[name=year]").change(function() {
+    $("#map_container").html("")
+    map(parseInt($(this).val()))
+  })
+})
