@@ -81,7 +81,7 @@
    .attr('fill', function(d) {
       if (!totalRefugees[d.properties.name.toUpperCase()])
         return "white"
-      var lightness = totalRefugees[d.properties.name.toUpperCase()] / maxRefugees
+      var lightness = ((totalRefugees[d.properties.name.toUpperCase()] / maxRefugees) * .7) + .2
 
       return d3.hsl(0, .6, 1 - (lightness))
    })
