@@ -112,6 +112,7 @@ function map(year) {
       return area([newStart, end])
     })
     .attr('class', function(d) { d.Asylum.toUpperCase() })
+    .attr("class", "arrow")
     .attr("display", "none")
     .attr("fill", "black")
     .attr('stroke', 'rgba(0,0,0,0)')

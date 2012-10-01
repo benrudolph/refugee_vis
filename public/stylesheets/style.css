@@ -6,3 +6,7 @@
   font-style: bold;
   left:300px;
 }
+
+.arrow {
+  pointer-events: none;
+}
