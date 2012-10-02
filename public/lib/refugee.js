@@ -56,6 +56,7 @@ function map(year) {
     .attr("class", "node")
 
   var totalRefugees = {}
+  var totalRefugeesHelped = {}
   var maxRefugees = 0
 
   for (var index = 0; index < refugees.length; index++) {
@@ -63,8 +64,10 @@ function map(year) {
     var key = datum.Asylum.toUpperCase()
     if (totalRefugees[key]) {
       totalRefugees[key] += datum.RefugeeLikeSituation
+      totalRefugeesHelped[key] += datum.RefugeeLikeSituationAssisted
     } else {
       totalRefugees[key] = datum.RefugeeLikeSituation
+      totalRefugeesHelped[key] = datum.RefugeeLikeSituationAssisted
     }
   }
 
@@ -121,7 +124,12 @@ function map(year) {
 
   function brighten(opacity) {
     return function(g, i) {
-      $("#info").text(g.properties.name + ": " + totalRefugees[g.properties.name.toUpperCase()])
+      $("#info").html(function() {
+         var txt = g.properties.name + ": " + totalRefugees[g.properties.name.toUpperCase()]
+         txt += "<br />"
+         txt += ((totalRefugeesHelped[g.properties.name.toUpperCase()] / totalRefugees[g.properties.name.toUpperCase()]) * 100).toFixed(2) + "% helped by UNHCR"
+         return txt
+      })
       nodes.selectAll("g.node path")
         .filter(function(d) {
           return d.Asylum.toUpperCase() != g.properties.name.toUpperCase()
