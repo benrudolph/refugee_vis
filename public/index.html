@@ -5,19 +5,24 @@
     </title> <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   </head>
   <body>
-    <div id="info" style="width:2000;height:50"></div>
-    <input type="radio" value="2006" name="year" checked="checked"/>2006
-    <input type="radio" value="2007" name="year" />2007
-    <input type="radio" value="2008" name="year" />2008
-    <input type="radio" value="2009" name="year" />2009
-    <input type="radio" value="2010" name="year" />2010
-    <div id="map_container" style="width:2000;height:1000">
+    <div id="header">
+      <div id="info"></div>
+      <div id="buttons">
+        <input type="radio" value="2006" name="year" checked="checked"/>2006
+        <input type="radio" value="2007" name="year" />2007
+        <input type="radio" value="2008" name="year" />2008
+        <input type="radio" value="2009" name="year" />2009
+        <input type="radio" value="2010" name="year" />2010
+      </div>
+    </div>
+    <div id="left_column"></div>
+    <div id="map_container">
     </div>
   </body>
   <script src="lib/d3.v2.js"></script>
   <script src="lib/jquery.min.js"></script>
   <script src="data/worldmap_data.js"></script>
   <script src="data/largeset.js"></script>
-  <script src="lib/refugee.js"></script>
+  <script src="lib/rewrite.js"></script>
 </html>
 

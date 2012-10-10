@@ -1,6 +1,5 @@
 function map(year) {
-  var data,
-      xy = d3
+  var xy = d3
             .geo
             .equirectangular()
             .scale($('#map_container').width())
@@ -140,7 +139,8 @@ function map(year) {
         })
         .transition()
           .style("display", function(d) { if (opacity === 1) return "inline" })
-          .style("stroke-width", 1)
+          .attr("stroke-width", 1)
+          .attr('stroke', 'rgba(0,0,0,1)')
     }
   }
 

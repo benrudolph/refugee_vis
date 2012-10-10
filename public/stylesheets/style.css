@@ -1,12 +1,16 @@
 #info {
-  position:fixed;
-  top:0px;
   text-align:center;
   font-size:30px;
   font-style: bold;
-  left:300px;
+  width: 1000px;
 }
 
 .arrow {
   pointer-events: none;
+}
+
+#map_container {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid black;
 }
