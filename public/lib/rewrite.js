@@ -114,9 +114,9 @@ World.prototype.map = function(year) {
       .attr("d", this.path)
       .attr("fill", function(d) {
         if (!that.totalRefugees[year][d.properties.name.toUpperCase()])
-          return "white"
+          return "rgb(130,130,130)"
         var lightness = ((that.totalRefugees[year][d.properties.name.toUpperCase()] /
-            that.maxRefugees[year]) * .7) + .2
+            that.maxRefugees[year]) * .8)
 
         return d3.hsl(0, .6, 1 - (lightness))
       })

@@ -9,8 +9,22 @@
   pointer-events: none;
 }
 
+#content {
+  width: 1300px;
+}
+
+#legend {
+  width: 250px;
+  display: inline-block;
+}
+
+#legend span {
+  text-decoration: underline;
+}
+
 #map_container {
   width: 1000px;
   height: 500px;
   border: 1px solid black;
+  display: inline-block;
 }

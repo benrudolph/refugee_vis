@@ -1,7 +1,7 @@
 <html !DOCTYPE>
   <head>
     <title>
-      Assignment 1
+      Refugee Data
     </title> <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   </head>
   <body>
@@ -15,8 +15,25 @@
         <input type="radio" value="2010" name="year" />2010
       </div>
     </div>
-    <div id="left_column"></div>
-    <div id="map_container">
+    <div id="content">
+      <div id="map_container"></div>
+      <div id="legend">
+        <span>Functionality</span> <br />
+        <b>Zoom-In</b>: Double click on country <br />
+        <b>Zoom-Out</b>: Shift+Double click on country <br />
+        <br />
+        <span>Country Colors</span> <br />
+        <b>Gray</b>: No data in database on country <br />
+        <b>Reds</b>: The darker the red, the more refugees reside in that country. If it's close to white there are
+        relatively few refugees that reside in that country. <br />
+        <br />
+        <span>Arrows</span> <br />
+        <b>Size</b>: The size of the arrow is proportional to the percentage of refugees coming from that
+        country. <br />
+        <b>Location</b>: The location of the arrow points where the refugees came from to where they sought
+        asylum.
+
+      </div>
     </div>
   </body>
   <script src="lib/d3.v2.js"></script>
