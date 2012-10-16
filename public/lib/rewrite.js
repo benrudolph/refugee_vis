@@ -166,7 +166,8 @@ World.prototype.show = function(show) {
   return function(g, i) {
     $("#info").html(function() {
       var txt = g.properties.name + ": " + that.totalRefugees[that.year][g.properties.name.toUpperCase()]
-      txt += "Total Refugees"
+      if (that.totalRefugees[that.year][g.properties.name.toUpperCase()])
+        txt += " Total Refugees"
       txt += "<br />"
       txt += ((that.totalRefugeesAssisted[that.year][g.properties.name.toUpperCase()] /
           that.totalRefugees[that.year][g.properties.name.toUpperCase()]) * 100).toFixed(2) +
